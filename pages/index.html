@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../style/style.css">
+    <script src="https://kit.fontawesome.com/b457912d7b.js" crossorigin="anonymous"></script>
     <title>Filip CV</title>
 </head>
 
@@ -24,18 +25,31 @@
         <div class="leftContainer">
             <div>
                 <h2>Profile</h2>
-                <ul>
+                <ul class="profileList">
                     <li>
-                        <p>Phonenumber</p>
+                        <div class="listContainer">
+                            <i class="fas fa-mobile-alt" style="color: #F26419;"></i>
+                            <p>+46703386719</p>
+                        </div>
                     </li>
                     <li>
-                        <p>Email</p>
+                        <div class="listContainer">
+                            <i class="far fa-envelope" style="color: #F26419;"></i>
+                            <p>filip@jinstrand.se</p>
+                        </div>
                     </li>
                     <li>
-                        <p>Github</p>
+                        <div class="listContainer">
+                            <i class="fab fa-github" style="color: #F26419;"></i>
+                            <a href="https://github.com/FilipJinstrand" target="_blank"
+                                style="color: white; margin-bottom: 16px">Github!</a>
+                        </div>
                     </li>
                     <li>
-                        <p>Location</p>
+                        <div class="listContainer">
+                            <i class="fas fa-map-marker-alt" style="color: #F26419;"></i>
+                            <p>Borås, Västra götaland</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -43,44 +57,58 @@
                 <h2>Education</h2>
                 <ul>
                     <li>
-                        <h3>2013-2016</h3>
-                        <p></p>
+                        <div>
+                            <h3>2013-2016</h3>
+                            <p>Skola</p>
+                        </div>
                     </li>
                     <li>
-                        <h3>2017-2019</h3>
-                        <p></p>
+                        <div>
+                            <h3>2017-2019</h3>
+                        </div>
                     </li>
                     <li>
-                        <h3>2019-2021</h3>
-                        <p></p>
+                        <div>
+                            <h3>2019-2021</h3>
+                        </div>
                     </li>
                 </ul>
             </div>
             <div>
                 <h2>Skills</h2>
-                <ul>
+                <ul class="multiUl">
                     <li>
-                        <p>asd</p>
+                        <p>C#</p>
+                        <span id="progress-cs"></span>
                     </li>
                     <li>
-                        <p>asd</p>
+                        <p>SQL</p>
+                        <span id="progress-sql"></span>
                     </li>
                     <li>
-                        <p>asd</p>
+                        <p>JavaScript</p>
+                        <span id="progress-js"></span>
+                    </li>
+                    <li>
+                        <p>HTML</p>
+                        <span id="progress-html"></span>
                     </li>
                 </ul>
             </div>
             <div>
                 <h2>Languages</h2>
-                <ul>
+                <ul class="multiUl">
                     <li>
-                        <p>asd</p>
+                        <p>English</p>
+                        <span id="progress-eng"></span>
                     </li>
                     <li>
-                        <p>asd</p>
+                        <p>Swedish</p>
+                        <span id="progress-swe"></span>
                     </li>
                     <li>
-                        <p>asd</p>
+                        <p>German</p>
+                        <span id="progress-ger"></span>
                     </li>
                 </ul>
             </div>
@@ -111,6 +139,7 @@
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-<script type="module" src="../src/main.js"></script>
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/0.5.6/dist/progressbar.js"></script>
+<script src="../src/main.js"></script>
 
 </html>

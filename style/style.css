@@ -23,6 +23,17 @@ p{
     color: white;
 }
 
+.multiUl{
+    list-style-type: none;
+}
+
+.multiUl li p {
+    margin-bottom: 0px;
+}
+
+.profileList{
+    list-style-type: none;
+}
 
 .headerCard{
     text-align: center;
@@ -54,4 +65,13 @@ p{
     margin: auto;
     margin-top: 20px;
     padding-left: var(--container-padding);
+}
+
+.listContainer{
+    display: flex;
+    flex-direction: row;
+}
+
+.listContainer i {
+    padding-right: 10px;
 }
