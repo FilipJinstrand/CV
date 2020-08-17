@@ -6,16 +6,27 @@ body{
     margin: 0px;
     padding: 0px;
     font-family: 'Courier New', Courier, monospace;
-    background-color: grey;
+    background-color: #2F4858;
 }
 header{
     margin: 0px;
     padding: 0px;
 }
 
+h2{
+    color: #F6AE2D;
+}
+h3{
+    color: white;
+}
+p{
+    color: white;
+}
+
+
 .headerCard{
     text-align: center;
-    background-color: aquamarine;
+    background-color: #F26419;
     min-height: 150px;
 }
 
