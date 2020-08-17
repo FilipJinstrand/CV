@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/FilipJinstrand/CV/issues"
   },
-  "homepage": "https://github.com/FilipJinstrand/CV#readme"
+  "homepage": "https://github.com/FilipJinstrand/CV#readme",
+  "dependencies": {}
 }
