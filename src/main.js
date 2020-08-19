@@ -1,3 +1,7 @@
+const gitUrl = 'https://api.github.com/users/filipjinstrand/repos'
+
+GetGitRepos();
+
 var typed2 = new Typed('#typed', {
     strings: ['Programmer ^4000'],
     typeSpeed: 50,
@@ -92,3 +96,63 @@ window.onload = function onLoad() {
     gerBar.animate(0.20);
 };
 
+
+
+
+function GetGitRepos() {
+    const gitRepos = [];
+    fetch(gitUrl)
+        .then(response => response.json())
+        .then(data = (data) => {
+            console.log(data)
+
+            data.forEach(element => {
+                var repoName = element["name"]
+                var pushDate = element["pushed_at"]
+                var gitLink = element["html_url"]
+                // console.log(repoName + " " + pushDate + " " + gitLink)
+
+                var gitObject = {
+                    name: repoName,
+                    date: pushDate,
+                    link: gitLink
+                }
+
+                gitRepos.push(gitObject)
+                // console.log(gitObject)
+
+
+            });
+            SortGitReposByDate(gitRepos);
+        });
+
+
+
+}
+
+function SortGitReposByDate(gitRepos) {
+
+    gitRepos.sort((a, b) => {
+        return new Date(b.date) - new Date(a.date)
+    })
+
+    for (let i = 0; i < 5; i++) {
+        const repo = gitRepos[i];
+        console.log(repo)
+        DisplayGitRepos(repo);
+    }
+}
+
+function DisplayGitRepos(repo) {
+    var gitReposElement = document.getElementById("gitRepos");
+
+    gitReposElement.insertAdjacentHTML("beforeend", `
+            <div class="card" style="width: 20px; background-color: #33658A;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: #F6AE2D;">${repo.name}</h5>
+                    <p class="card-text">Created at: ${repo.date}</p>
+                    <a href="${repo.link}" target="_blank" class="btn btn-primary">Repo</a>
+                </div>
+            </div>
+    `)
+}
