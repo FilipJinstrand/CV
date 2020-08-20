@@ -100,7 +100,7 @@ window.onload = function onLoad() {
 
 
 function GetGitRepos() {
-    const gitRepos = [];
+    var gitRepos = [];
     fetch(gitUrl)
         .then(response => response.json())
         .then(data = (data) => {
@@ -108,7 +108,7 @@ function GetGitRepos() {
 
             data.forEach(element => {
                 var repoName = element["name"]
-                var pushDate = element["pushed_at"]
+                var pushDate = element["created_at"]
                 var gitLink = element["html_url"]
                 // console.log(repoName + " " + pushDate + " " + gitLink)
 
@@ -147,12 +147,16 @@ function DisplayGitRepos(repo) {
     var gitReposElement = document.getElementById("gitRepos");
 
     gitReposElement.insertAdjacentHTML("beforeend", `
-            <div class="card" style="width: 20px; background-color: #33658A;">
+            <div class="card" style="width: 20px; background-color: #2F4858;">
                 <div class="card-body">
                     <h5 class="card-title" style="color: #F6AE2D;">${repo.name}</h5>
                     <p class="card-text">Created at: ${repo.date}</p>
-                    <a href="${repo.link}" target="_blank" class="btn btn-primary">Repo</a>
+                    <a href="${repo.link}" target="_blank" class="btn" style="background-color: #F6AE2D;">Repo</a>
                 </div>
             </div>
     `)
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})

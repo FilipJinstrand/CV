@@ -11,6 +11,7 @@
     }    
 }
 
+
 body{
     margin: 0px;
     padding: 0px;
@@ -89,3 +90,13 @@ p{
 .listContainer i {
     padding-right: 10px;
 }
+
+.tooltip-inner {
+    background-color: #2F4858 !important;
+    color: #F6AE2D ;
+}
+
+.bs-tooltip-right .arrow::before, .bs-tooltip-auto[x-placement^="right"] .arrow::before {
+    border-right-color: #2F4858 !important;
+}
+  
