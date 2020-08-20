@@ -114,7 +114,7 @@ function GetGitRepos() {
 
                 var gitObject = {
                     name: repoName,
-                    date: pushDate,
+                    date: pushDate.substring(0, 10),
                     link: gitLink
                 }
 
@@ -133,7 +133,7 @@ function GetGitRepos() {
 function SortGitReposByDate(gitRepos) {
 
     gitRepos.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date)
+        return b.date - a.date
     })
 
     for (let i = 0; i < 5; i++) {
@@ -146,7 +146,7 @@ function SortGitReposByDate(gitRepos) {
 function DisplayGitRepos(repo) {
     var gitReposElement = document.getElementById("gitRepos");
 
-    gitReposElement.insertAdjacentHTML("beforeend", `
+    gitReposElement.insertAdjacentHTML("afterbegin", `
             <div class="card" style="width: 20px; background-color: #33658A;">
                 <div class="card-body">
                     <h5 class="card-title" style="color: #F6AE2D;">${repo.name}</h5>
