@@ -1,11 +1,15 @@
 
-
-
 :root{
     --container-padding: 40px;
-    /* --container-min-margin: 20px; */
+    --container-min-margin: auto;
 }    
 
+@media (min-width: 2000px){
+    :root{
+        --container-padding: 40px;
+        --container-min-margin: 800px;
+    }    
+}
 
 body{
     margin: 0px;
