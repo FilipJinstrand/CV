@@ -33,7 +33,7 @@ window.onload = function onLoad() {
         svgStyle: { width: '100%', height: '100%' }
     });
 
-    jsBar.animate(0.25);
+    jsBar.animate(0.60);
 
     var sqlBar = new ProgressBar.Line("#progress-sql", {
         strokeWidth: 10,
@@ -45,7 +45,7 @@ window.onload = function onLoad() {
         svgStyle: { width: '100%', height: '100%' }
     });
 
-    sqlBar.animate(0.55);
+    sqlBar.animate(0.40);
 
     var htmlBar = new ProgressBar.Line("#progress-html", {
         strokeWidth: 10,
@@ -133,7 +133,7 @@ function GetGitRepos() {
 function SortGitReposByDate(gitRepos) {
 
     gitRepos.sort((a, b) => {
-        return b.date - a.date
+        return new Date(b.date) - new Date(a.date)
     })
 
     for (let i = 0; i < 5; i++) {
@@ -146,7 +146,7 @@ function SortGitReposByDate(gitRepos) {
 function DisplayGitRepos(repo) {
     var gitReposElement = document.getElementById("gitRepos");
 
-    gitReposElement.insertAdjacentHTML("afterbegin", `
+    gitReposElement.insertAdjacentHTML("beforeend", `
             <div class="card" style="width: 20px; background-color: #33658A;">
                 <div class="card-body">
                     <h5 class="card-title" style="color: #F6AE2D;">${repo.name}</h5>
