@@ -104,13 +104,11 @@ function GetGitRepos() {
     fetch(gitUrl)
         .then(response => response.json())
         .then(data = (data) => {
-            console.log(data)
 
             data.forEach(element => {
                 var repoName = element["name"]
                 var pushDate = element["created_at"]
                 var gitLink = element["html_url"]
-                // console.log(repoName + " " + pushDate + " " + gitLink)
 
                 var gitObject = {
                     name: repoName,
@@ -119,7 +117,6 @@ function GetGitRepos() {
                 }
 
                 gitRepos.push(gitObject)
-                // console.log(gitObject)
 
 
             });
@@ -138,7 +135,6 @@ function SortGitReposByDate(gitRepos) {
 
     for (let i = 0; i < 5; i++) {
         const repo = gitRepos[i];
-        console.log(repo)
         DisplayGitRepos(repo);
     }
 }
